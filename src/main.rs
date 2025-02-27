@@ -2,6 +2,7 @@
  *   Copyright (c) 2025 
  *   All rights reserved.
  */
+mod aboutus;
 use actix_web::{web, App, HttpResponse, HttpServer, Responder};
 
 async fn hello() -> impl Responder {
@@ -51,8 +52,9 @@ async fn hello() -> impl Responder {
             <div class="container mx-auto p-4">
                 <div class="flex justify-between items-center mb-4">
                     <div>
-                        <h1 class="text-4xl font-bold text-black">Welcome to the Futuristic Cookie Shop!</h1>
+                        <h1 class="text-4xl font-bold text-black">Welcome to Futuristic Cookie Shop!</h1>
                         <p class="text-lg text-black">Experience the future of cookies with our exclusive collection!</p>
+                        <a href="/about" class="text-blue-500">Learn more about us</a>
                     </div>
                     <div>
                         <button class="bg-blue-500 text-white px-4 py-2 rounded mr-2">Login</button>
@@ -122,6 +124,7 @@ async fn main() -> std::io::Result<()> {
     HttpServer::new(|| {
         App::new()
             .route("/", web::get().to(hello))
+            .route("/about", web::get().to(aboutus::about_page))
     })
     .bind("127.0.0.1:3000")?
     .run()
