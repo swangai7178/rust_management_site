@@ -1,3 +1,7 @@
+/*
+ *   Copyright (c) 2025 
+ *   All rights reserved.
+ */
 use actix_web::{web, App, HttpResponse, HttpServer, Responder};
 
 async fn hello() -> impl Responder {
