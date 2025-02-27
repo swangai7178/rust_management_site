@@ -1,0 +1,9 @@
+[package]
+name = "actix-web-example"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+actix-web = "4" # or the latest version
+tokio = { version = "1", features = ["full"] }
+watchexec = "6.0.0"
